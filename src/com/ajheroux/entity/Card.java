@@ -7,7 +7,6 @@ public class Card implements Comparable<Card>{
 	private boolean faceUp;
 	
 	
-	
 	public Card(int value, int suit) {
 		this(value, suit, false);
 	}
@@ -55,6 +54,32 @@ public class Card implements Comparable<Card>{
 		return cardValue + " of " + cardSuit;
 	}
 	
+	
+	
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+
+	public int getSuit() {
+		return suit;
+	}
+
+	public void setSuit(int suit) {
+		this.suit = suit;
+	}
+
+	public boolean isFaceUp() {
+		return faceUp;
+	}
+
+	public void setFaceUp(boolean faceUp) {
+		this.faceUp = faceUp;
+	}
+
 	@Override
 	public int compareTo(Card o) {
 		// TODO Auto-generated method stub

@@ -1,10 +1,11 @@
 package com.ajheroux.entity;
 
+import java.util.List;
 import java.util.ArrayList;
 
 public abstract class CardCollection {
 
-	private ArrayList<Card> cards = new ArrayList<Card>();
+	protected List<Card> cards = new ArrayList<Card>();
 	
 	public boolean addCard(Card newCard) {
 		
@@ -13,7 +14,7 @@ public abstract class CardCollection {
 		return true;
 	}
 
-	public ArrayList<Card> getCards() {
+	public List<Card> getCards() {
 		return cards;
 	}
 
