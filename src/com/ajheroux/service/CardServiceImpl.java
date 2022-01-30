@@ -15,6 +15,8 @@ public class CardServiceImpl implements CardService {
 				returnDeck.addCard(new Card(v, s));
 			}
 		}
+		returnDeck.addCard(new Card(14,4));
+		returnDeck.addCard(new Card(14,4));
 		
 		
 		return returnDeck;

@@ -18,13 +18,35 @@ public class Card implements Comparable<Card>{
 	}
 	
 	
+	public int getScoredValue() {
+		
+		int scoredValue;
+		
+		switch(this.value) {
+			case 11: scoredValue = 10;
+			break;
+			case 12: scoredValue = 10;
+			break;
+			case 13: scoredValue = 10;
+			break;
+			case 14: scoredValue = -3;
+			break;
+			default: scoredValue = this.value;
+			break;
+		}
+		
+		
+		return scoredValue;
+	}
+	
 	
 	public String toString() {
 		
 		String cardValue;
 		String cardSuit;
+		String returnString;
 		
-		switch(value) {
+		switch(this.value) {
 			case 1: cardValue = "A";
 			break;
 			case 11: cardValue = "J";
@@ -33,11 +55,13 @@ public class Card implements Comparable<Card>{
 			break;
 			case 13: cardValue = "k";
 			break;
+			case 14: cardValue = "Joker";
+			break;
 			default: cardValue = String.valueOf(value);
 			break;
 		}
 		
-		switch(suit) {
+		switch(this.suit) {
 			case 0: cardSuit = "club";
 			break;
 			case 1: cardSuit = "diamond";
@@ -46,12 +70,19 @@ public class Card implements Comparable<Card>{
 			break;
 			case 3: cardSuit = "spade";
 			break;
+			case 4: cardSuit = "joker";
+			break;
 			default: cardSuit = "invalid suit";
 			break;
 		}
 		
-		
-		return cardValue + " of " + cardSuit;
+		if (this.value == 14) {
+			returnString = cardValue;
+		}
+		else {
+			returnString = cardValue + " of " + cardSuit; 
+		}
+		return returnString;
 	}
 	
 	
